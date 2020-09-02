@@ -1,5 +1,43 @@
 //<ОСНОВНОЙ БЛОК>====================================================================================================
-
+.button {
+	@include flexbox();
+	justify-content: center;
+	align-items: center;
+	background: linear-gradient(180deg, #ffe5ac 0%, #ffe5ac 0.01%, #b99c5d 100%);
+	border-radius: 14px/40px;
+	border: 1px solid #ffe5ac;
+	box-shadow: 0px 4px 1px 0px #baa070;
+	text-transform: uppercase;
+	color: #4f4531;
+	text-shadow: 0px 1px 0px #fff3d8;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+}
+.title {
+	font-size: 48px;
+	line-height: 50px;
+	text-align: center;
+	&--white {
+		color: #ffffff;
+	}
+	&--black {
+		color: #191919;
+	}
+}
+.subtitle {
+	font-weight: 300;
+	font-size: 24px;
+	line-height: 31px;
+	text-align: center;
+	margin: 15px 0px 0px 0px;
+	&--white {
+		color: #ffffff;
+	}
+	&--black {
+		color: #191919;
+	}
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================

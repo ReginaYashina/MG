@@ -154,11 +154,137 @@ body {
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
-.main-screen-bg {
+.main-screen {
 	background: url(/img/backgrounds/main_screen_bg.png);
 	background-size: cover;
 	background-position: top center;
+	&__row {
+		@include flexbox();
+		&--top {
+			padding: 176px 0px 0px 0px;
+		}
+		&--bottom {
+			position: relative;
+			padding: 125px 0px 0px 0px;
+		}
+	}
+	&__column {
+		&--top {
+			flex: 0 0 50%;
+		}
+		&--bottom {
+			position: relative;
+			flex: 0 0 25%;
+			text-align: center;
+			cursor: pointer;
+			&:hover .about-site {
+				top: 19%;
+				transition: all 0.8s ease 0s;
+			}
+		}
+		&--content {
+		}
+		&--visual {
+			img {
+				max-width: 117%;
+			}
+		}
+	}
+	&__subtitle {
+		font-weight: 300;
+		font-size: 24px;
+		line-height: 24px;
+		&--gold {
+			background: linear-gradient(180deg, #ffe5ac 0%, #ffe5ac 0.01%, #b99c5d 100%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+		}
+		&--white {
+			color: #fff;
+		}
+	}
+	&__title {
+		font-size: 64px;
+		line-height: 75px;
+		color: #fff;
+		margin: 15px 0px 25px 0px;
+	}
+	&__button {
+		position: relative;
+		width: 402px;
+		height: 77px;
+		margin: 70px 0px 0px 0px;
+		&:after {
+			content: url(/img/common/bullet_for_button.png);
+			position: absolute;
+			left: 85%;
+			top: -23%;
+		}
+	}
+	&__decor {
+		position: absolute;
+		top: 118%;
+		left: -5%;
+	}
 }
+
+.site {
+	&__icon {
+	}
+	&__title {
+		font-size: 16px;
+		line-height: 20px;
+		text-transform: uppercase;
+		color: #ffffff;
+		margin: 19px 0px 0px 0px;
+	}
+}
+.about-site {
+	position: absolute;
+	background: #fff;
+	border-radius: 10px;
+	padding: 16px 18px 43px 18px;
+	width: 95%;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	transition: all 0.8s ease 0s;
+	&__wrapper {
+		width: 95%;
+		position: absolute;
+		top: -219%;
+		pointer-events: none;
+	}
+	&__innerwrapper {
+		min-height: 400px;
+		position: relative;
+		overflow: hidden;
+	}
+	&__icon {
+	}
+	&__title {
+		font-size: 16px;
+		line-height: 19px;
+		text-transform: uppercase;
+		color: #191919;
+		margin: 12px 0px 27px 0px;
+	}
+	&__text {
+		font-size: 14px;
+		line-height: 16px;
+		color: #191919;
+	}
+	&__link {
+		display: inline-block;
+		font-size: 12px;
+		line-height: 14px;
+		text-decoration-line: underline;
+		color: #191919;
+		margin: 26px 0px 0px 0px;
+		pointer-events: auto;
+	}
+}
+
 //====================================================================================================
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================

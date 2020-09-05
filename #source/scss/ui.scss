@@ -113,32 +113,47 @@ ol.counter {
 	}
 }
 //====================================================================================================
+// .ibg {
+// 	position: relative;
+// 	img {
+// 		position: absolute;
+// 		width: 100%;
+// 		height: 100%;
+// 		top: 0;
+// 		left: 0;
+// 		object-fit: cover;
+// 	}
+// }
+
+// body.ie {
+// 	.ibg {
+// 		background-position: center;
+// 		background-size: cover;
+// 		background-repeat: no-repeat;
+// 	}
+// 	.ibg img {
+// 		width: 0;
+// 		height: 0;
+// 		opacity: 0;
+// 		visibility: hidden;
+// 	}
+// }
 .ibg {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
 	position: relative;
-	img {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		object-fit: cover;
-	}
 }
 
-body.ie {
-	.ibg {
-		background-position: center;
-		background-size: cover;
-		background-repeat: no-repeat;
-	}
-	.ibg img {
-		width: 0;
-		height: 0;
-		opacity: 0;
-		visibility: hidden;
-	}
+.ibg img {
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
 }
-
 //====================================================================================================
 .video {
 	position: relative;

@@ -1,5 +1,476 @@
-footer{}
+.footer {
+	background-color: #181818;
+	flex: 1 0 auto;
+
+	&__bg {
+		background: url(../img/backgrounds/footer_map_bg.png) no-repeat 90% 0;
+		// background-size: cover;
+
+		@media (min-width: 1921px) {
+			background-position: 52% 6%;
+		}
+
+		@media (max-width: 1440px) {
+			background-position: 71% 6%;
+		}
+
+		@media (max-width: 1366px) {
+			background-position: 59% 6%;
+		}
+
+		@media (max-width: 768px) {
+			background: url(../img/tablet/backgrounds/5.png) no-repeat;
+			background-position: 59% 63%;
+		}
+
+		@media (max-width: 540px) {
+			background: url(../img/backgrounds/3.png) no-repeat;
+			background-position: 60% 60%;
+		}
+	}
+
+	&__row {
+		&_top,
+		&_bottom {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&_top {
+			padding-top: 92px;
+			padding-bottom: 120px;
+
+			@media (max-width: 1440px) {
+				padding-bottom: 100px;
+				justify-content: space-around;
+			}
+
+			@media (max-width: 1024px) {
+				justify-content: space-around;
+			}
+
+			@media (max-width: 768px) {
+				padding-top: 40px;
+				padding-bottom: 60px;
+			}
+
+			@media (max-width: 540px) {
+				flex-direction: column;
+				position: relative;
+			}
+		}
+
+		&_bottom {
+			padding-top: 52px;
+			padding-bottom: 35px;
+
+			@media (max-width: 768px) {
+				padding: 40px 15px 60px 25px;
+			}
+
+			@media (max-width: 540px) {
+				flex-direction: column;
+				align-items: center;
+				justify-content: space-around;
+			}
+		}
+	}
+
+	&__title {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 32px;
+		color: #ffffff;
+		text-align: center;
+		position: relative;
+		display: flex;
+		justify-content: center;
+
+		@media (max-width: 768px) {
+			font-size: 24px;
+		}
+
+		&:before {
+			content: "";
+			position: absolute;
+			width: 170px;
+			height: 2px;
+			background: #6a6a6a;
+			top: 160%;
+			// left: 10%;
+		}
+	}
+
+	&__subtitle {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 18px;
+		color: #6a6a6a;
+		text-align: center;
+		position: relative;
+
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
+
+		&_phone {
+			margin-top: 74px;
+
+			@media (max-width: 768px) {
+				margin-top: 45px;
+			}
+
+			&:before {
+				content: url(../img/icons/phone_black.svg);
+				position: absolute;
+				margin-left: -25px;
+				top: 10%;
+			}
+		}
+
+		&_time {
+			margin-top: 55px;
+
+			@media (max-width: 768px) {
+				margin-top: 35px;
+			}
+
+			&:before {
+				content: url(../img/icons/clock_black.svg);
+				position: absolute;
+				margin-left: -25px;
+				top: 10%;
+			}
+		}
+
+		&_mail {
+			margin-top: 56px;
+
+			@media (max-width: 768px) {
+				margin-top: 35px;
+			}
+
+			&:before {
+				content: url(../img/icons/mail_black.svg);
+				position: absolute;
+				margin-left: -25px;
+				top: 10%;
+			}
+		}
+	}
+
+	&__list {
+		margin-top: 74px;
+
+		& li {
+			margin-bottom: 19px;
+			position: relative;
+			padding-left: 30px;
+
+			&:before {
+				content: url(../img/icons/interface_black.svg);
+				position: absolute;
+				margin-left: -30px;
+			}
+		}
+
+		& a {
+			font-style: normal;
+			font-weight: normal;
+			font-size: 18px;
+			line-height: 21px;
+			color: #ffffff;
+		}
+	}
+
+	&__phone {
+		font-size: 26px;
+		font-style: normal;
+		font-weight: normal;
+		color: #ffffff;
+		display: inline-block;
+		margin-top: 20px;
+
+		@media (max-width: 540px) {
+			margin-top: 10px;
+		}
+	}
+
+	&__time {
+		font-size: 18px;
+		font-style: normal;
+		font-weight: normal;
+		color: #ffffff;
+		text-align: center;
+		margin-top: 17px;
+
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
+
+		@media (max-width: 540px) {
+			margin-top: 10px;
+		}
+	}
+
+	&__mail {
+		font-size: 18px;
+		font-style: normal;
+		font-weight: normal;
+		color: #ffffff;
+		display: inline-block;
+		margin-top: 20px;
+
+		@media (max-width: 768px) {
+			font-size: 14px;
+		}
+
+		@media (max-width: 540px) {
+			margin-top: 10px;
+		}
+	}
+
+	&__location {
+		margin-top: 176px;
+		margin-left: 20px;
+
+		@media (max-width: 1440px) {
+			margin-top: 158px;
+			margin-left: 82px;
+		}
+
+		@media (max-width: 768px) {
+			display: none;
+		}
+
+		&_mob {
+			display: none;
+
+			@media (max-width: 768px) {
+				display: block;
+				margin-top: 163px;
+				margin-left: -24px;
+			}
+
+			@media (max-width: 640px) {
+				margin-left: -36px;
+			}
+
+			@media (max-width: 540px) {
+				position: absolute;
+				top: 90%;
+				left: 15%;
+				margin-top: 0;
+				margin-left: 0;
+			}
+		}
+	}
+
+	&__office {
+		margin: 95px auto 0;
+		width: 180px;
+		height: 40px;
+		background: #ffffff;
+		box-shadow: 0px 4px 30px rgba(0, 0, 0, 0.25);
+		border-radius: 14px/40px;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 16px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		position: relative;
+		z-index: 2;
+
+		@media (max-width: 1366px) {
+			max-width: 150px;
+		}
+
+		@media (max-width: 768px) {
+			font-size: 12px;
+			max-width: 113px;
+			max-height: 25px;
+			position: absolute;
+			top: 80%;
+			left: 36%;
+			margin: 0;
+		}
+
+		@media (max-width: 640px) {
+			left: 42px;
+		}
+
+		@media (max-width: 600px) {
+			left: 0;
+			top: 0;
+			margin: 0;
+			position: relative;
+			margin-top: 63px;
+			margin-left: auto;
+			margin-right: 8vw;
+		}
+
+		@media (max-width: 360px) {
+			margin-top: 75px;
+			margin-right: 40px;
+		}
+	}
+
+	&__address {
+		margin: -15px auto 0;
+		width: 345px;
+		height: 92px;
+		background: #ffffff;
+		box-shadow: 0px 4px 30px rgba(255, 255, 255, 0.25);
+		border-radius: 14px/40px;
+		font-style: normal;
+		font-weight: 600;
+		font-size: 20px;
+		color: #191919;
+		z-index: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		line-height: 27px;
+
+		@media (max-width: 1366px) {
+			max-width: 290px;
+			max-height: 80px;
+			font-size: 18px;
+			margin: -6px auto 0;
+		}
+
+		@media (max-width: 768px) {
+			font-size: 12px;
+			max-width: 194px;
+			max-height: 52px;
+			line-height: 14px;
+			position: absolute;
+			top: 90%;
+			left: 5%;
+		}
+
+		@media (max-width: 640px) {
+			left: 12%;
+		}
+
+		@media (max-width: 600px) {
+			position: relative;
+			margin: 0;
+			margin-left: auto;
+			left: 0;
+			top: 0;
+		}
+
+		@media (max-width: 360px) {
+			margin-top: -5px;
+		}
+
+		& span {
+			font-weight: lighter;
+		}
+	}
+
+	&__copyright {
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 500;
+		color: #a2a2a2;
+		flex: 0 1 33.333%;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+
+		@media (max-width: 768px) {
+			font-size: 10px;
+			line-height: 15px;
+			padding-right: 20px;
+		}
+
+		@media (max-width: 540px) {
+			order: 2;
+			text-align: center;
+			padding: 30px 101px;
+		}
+
+		@media (max-width: 360px) {
+			padding: 15px 75px;
+		}
+	}
+
+	&__logo {
+		flex: 0 1 33.333%;
+		box-sizing: border-box;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@media (max-width: 540px) {
+			order: 1;
+		}
+	}
+
+	&__confidentiality {
+		flex: 0 1 33.333%;
+		box-sizing: border-box;
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+
+		@media (max-width: 540px) {
+			order: 3;
+		}
+	}
+
+	&__link {
+		font-size: 14px;
+		font-style: normal;
+		font-weight: 500;
+		color: #a2a2a2;
+		text-decoration: underline;
+
+		@media (max-width: 768px) {
+			font-size: 10px;
+		}
+	}
+
+	&__contacts {
+		@media (max-width: 1440px) {
+			background-color: rgba(24, 24, 24, 0.3);
+		}
+
+		@media (max-width: 540px) {
+			text-align: center;
+		}
+	}
+
+	&__services {
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+
+	&__map {
+		@media (max-width: 768px) {
+			position: relative;
+		}
+
+		@media (max-width: 540px) {
+			margin-top: 40px;
+		}
+	}
+
+	&__img {
+		@media (max-width: 768px) {
+			max-width: 65%;
+		}
+
+		@media (max-width: 540px) {
+			max-width: 66%;
+		}
+	}
+}
 //====================================================================================================
 
 //====================================================================================================
-

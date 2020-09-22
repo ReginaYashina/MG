@@ -1,24 +1,70 @@
-<div class="popup">
+<div class="popup popup-get_offer">
 	<div class="popup-table table">
 		<div class="cell">
 			<div class="popup-content">
 				<div class="popup-close"></div>
-				<div class="popup__title"></div>
-				<div class="popup__txt"></div>
-				<form action="#" class="popup-form form">
-					<div class="form-input">
-						<input autocomplete="off" type="text" name="form[]" data-value="" class="input" />
+				<div class="popup__border">
+					<div class="popup__wrapper">
+						<div class="popup__title popup__heading">Заполните форму</div>
+						<div class="popup__txt popup__title">И мы отправим Вам коммерческое предложение</div>
+						<form action="#" class="popup__form">
+							<input type="text" class="popup__input" placeholder="Введите Ваше имя" required>
+							<input type="tel" class="popup__input" placeholder="Введите Ваш телефон" required>
+							<input type="email" class="popup__input" placeholder="Введите Ваш e-mail" required>
+							<button class="main-screen__button button">ПОЛУЧИТЬ УБОЙНОЕ ПРЕДЛОЖЕНИЕ</button>
+						</form>
+						<p class="popup__text">Нажимая кнопку “Получить убойное предложение”, я даю согласие на
+							обработку персональных данных и соглашаюсь с условиями <a href="#" class="popup__link">политики
+								конфиденциальности</a>.</p>
 					</div>
-					<div class="form-input">
-						<input autocomplete="off" type="text" name="form[]" data-value="" class="input req email" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup popup-brif">
+	<div class="popup-table table">
+		<div class="cell">
+			<div class="popup-content">
+				<div class="popup-close"></div>
+				<div class="popup__border">
+					<div class="popup__wrapper">
+						<div class="popup__title popup__heading">Заполните форму</div>
+						<div class="popup__txt popup__title">И мы перезвоним вам в течении 10 минут</div>
+						<form action="#" class="popup__form">
+							<input type="text" class="popup__input" placeholder="Введите Ваше имя" required>
+							<input type="tel" class="popup__input" placeholder="Введите Ваш телефон" required>
+							<input type="email" class="popup__input" placeholder="Введите Ваш e-mail" required>
+							<button class="main-screen__button button">ПОЛУЧИТЬ файл</button>
+						</form>
+						<p class="popup__text">Нажимая кнопку “Получить файл”, я даю согласие на
+							обработку персональных данных и соглашаюсь с условиями <a href="#" class="popup__link">политики
+								конфиденциальности</a>.</p>
 					</div>
-					<div class="form-input">
-						<input autocomplete="off" type="text" name="form[]" data-value="" class="input req" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="popup popup-call">
+	<div class="popup-table table">
+		<div class="cell">
+			<div class="popup-content popup-content-call">
+				<div class="popup-close"></div>
+				<div class="popup__border popup__border-call">
+					<div class="popup__wrapper popup__wrapper-call">
+						<div class="popup__title popup__heading">Заполните форму</div>
+						<div class="popup__txt popup__title">И мы перезвоним вам в течении 10 минут</div>
+						<form action="#" class="popup__form popup__form-call"">
+							<input type=" text" class="popup__input" placeholder="Введите Ваше имя" required>
+							<input type="tel" class="popup__input" placeholder="Введите Ваш телефон" required>
+							<button class="popup__button button">Заказать звонок</button>
+						</form>
+						<p class="popup__text">Нажимая кнопку “Заказать звонок”, я даю согласие на
+							обработку персональных данных и соглашаюсь с условиями <a href="#" class="popup__link">политики
+								конфиденциальности</a>.</p>
 					</div>
-					<div class="form-button">
-						<button type="submit" class="form__btn btn fw"></button>
-					</div>
-				</form>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -31,3 +77,19 @@
 		</div>
 	</div>
 </div>
+<!-- pop-up thanks-->
+<div class="popup_thanks__overlay js-overlay-thanks">
+	<div class="popup_thanks js-popup-campaign popup_thanks__border popup_thanks__border-thanks">
+		<div class="popup_thanks__wrapper popup_thanks__wrapper-thanks">
+			<div class="popup_thanks__close js-close-campaign"></div>
+			<div class="popup_thanks__visual">
+				<img src="/img/icons/6.png" alt="" class="popup_thanks__image">
+			</div>
+			<h4 class="popup_thanks__heading popup_thanks__heading-center">Заявка отправлена</h4>
+			<h3 class="popup_thanks__info">Мы уже обрабатываем вашу заявку
+				и наш менеджер свяжется с вами
+				в ближайшее время.</h3>
+		</div>
+	</div>
+</div>
+<!-- end thanks-->

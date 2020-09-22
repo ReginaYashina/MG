@@ -54,4 +54,59 @@ $(document).ready(function () {
 
 
 	});
+	$('.portfolio__slider').slick({
+		arrows: true,
+		dots: true,
+		slidesToShow: 1,
+		autoplay: false,
+		speed: 1000,
+		autoplaySpeed: 800,
+		appendDots: $('.portfolio__dots'),
+		appendArrows: $('.portfolio__arrows'),
+		fade: true
+		// responsive: [
+		// 	{
+		// 		breakpoint: 1024,
+		// 		settings: {
+		// 			adaptiveHeight: true
+		// 		}
+		// 	}
+		// 	{
+		// 		breakpoint: 550,
+		// 		settings: {
+		// 			slidesToShow:1
+		// 		}
+		// 	}
+		// ]
+	});
+	var slider = $('.portfolio__slider');
+
+	$('.portfolio__arrows .slick-prev').on('click', function () {
+		$(slider).slick('slickPrev');
+	});
+	$('.portfolio__arrows .slick-next').on('click', function () {
+		$(slider).slick('slickNext');
+	});
+	$('.works__slider').slick({
+		arrows: true,
+		dots: false,
+		slidesToShow: 2,
+		autoplay: false,
+		speed: 1000,
+		autoplaySpeed: 800,
+		responsive: [
+			{
+				breakpoint: 1200,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+			// 	{
+			// 		breakpoint: 550,
+			// 		settings: {
+			// 			slidesToShow:1
+			// 		}
+			// 	}
+		]
+	});
 });

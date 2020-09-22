@@ -123,19 +123,46 @@ $('.goto').click(function () {
 	return false;
 });
 
+// закрыть на крестик (thanks)
+$('.js-close-campaign').click(function () {
+	$('.js-overlay-thanks').fadeOut();
+	$('body').removeClass('lock');
+
+});
+// закрыть по клику вне окна
+$(document).mouseup(function (e) {
+	var popup = $('.js-popup-campaign');
+	if (e.target != popup[0] && popup.has(e.target).length === 0) {
+		$('.js-overlay-thanks').fadeOut();
+		$('body').removeClass('lock');
+
+
+	}
+});
+
+
+// function ibg() {
+// 	if (isIE()) {
+// 		let ibg = document.querySelectorAll(".ibg");
+// 		for (var i = 0; i < ibg.length; i++) {
+// 			if (ibg[i].querySelector('img') && ibg[i].querySelector('img').getAttribute('src') != null) {
+// 				ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
+// 			}
+// 		}
+// 	}
+// }
+// ibg();
 
 function ibg() {
-	if (isIE()) {
-		let ibg = document.querySelectorAll(".ibg");
-		for (var i = 0; i < ibg.length; i++) {
-			if (ibg[i].querySelector('img') && ibg[i].querySelector('img').getAttribute('src') != null) {
-				ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')';
-			}
-		}
-	}
-}
-ibg();
 
+	$.each($('.ibg'), function (index, val) {
+		if ($(this).find('img').length > 0) {
+			$(this).css('background-image', 'url("' + $(this).find('img').attr('src') + '")');
+		}
+	});
+}
+
+ibg();
 
 //Клик вне области
 $(document).on('click touchstart', function (e) {
@@ -622,14 +649,14 @@ function animateTop() {
 $('.popup__form, .finished_project_section--form').submit(function () {
 	$.ajax({
 		type: "POST",
-		url: "http://minigun-agency.by/wp-content/themes/minigun/assets/mail.php",
+		url: "https://minigun.agency/wp-content/themes/minigun-agency/mail.php",
 		data: $(this).serialize(),
 	}).done(function () {
 		$('.js-overlay-thanks').fadeIn();
-		$('.popup__overlay-form').fadeOut();
+		$('.popup').fadeOut();
 		$('.popup__form, .finished_project_section--form').trigger('reset');
-		gtag('event', 'submit', { 'event_category': 'form', 'event_label': 'popup__form' });
-		ym(62814052, 'reachGoal', 'popup__form'); return true;
+		// gtag('event', 'submit', { 'event_category': 'form', 'event_label': 'popup__form' });
+		// ym(62814052, 'reachGoal', 'popup__form'); return true;
 		// $('.quiz__page-final').hide();
 		// $('.quiz__page-first, .quiz__prev-first, .quiz__next-first').fadeIn();
 	});
@@ -639,14 +666,14 @@ $('.popup__form, .finished_project_section--form').submit(function () {
 $('.quiz__form').submit(function () {
 	$.ajax({
 		type: "POST",
-		url: "http://minigun-agency.by/wp-content/themes/minigun/assets/mail.php",
+		url: "https://minigun.agency/wp-content/themes/minigun-agency/mail.php",
 		data: $(this).serialize()
 	}).done(function () {
 		$('.quiz__thanks').fadeIn();
 		$('.quiz__page-final, .quiz__proc, .quiz__visual').fadeOut();
 		$('.quiz__for_mocup').removeClass('active');
-		gtag('event', 'submit', { 'event_category': 'quiz', 'event_label': 'quiz__form' });
-		ym(62814052, 'reachGoal', 'quiz__form'); return true;
+		// gtag('event', 'submit', { 'event_category': 'quiz', 'event_label': 'quiz__form' });
+		// ym(62814052, 'reachGoal', 'quiz__form'); return true;
 		// $('.quiz__form').trigger('reset');
 		// $('.quiz__page-final').hide();
 		// $('.quiz__page-first, .quiz__prev-first, .quiz__next-first').fadeIn();
@@ -898,4 +925,48 @@ $('.quiz__form').submit(function () {
 // });
 
 
+jQuery(document).ready(function ($) {
+	$('input[type="tel"]').mask("+375-(99)-999-99-99", { placeholder: "_" });
+});
+
+
+//FILTER
+$('.filter__item').click(function (event) {
+	var i = $(this).data('filter');
+
+	if (i == 1) {
+		$('.pf-portfolio__column').show();
+	} else {
+		$('.pf-portfolio__column').hide();
+		$('.pf-portfolio__column.f_' + i).show();
+	}
+	$('.filter__item').removeClass('active');
+	$(this).addClass('active');
+	return false;
+});
+
+
+//SLIDER
+let k = 0;
+const item = $('.invitation__row');
+// const btnNext = $('.invitation__link');
+
+
+$('.invitation__link').click(function () {
+	k++;
+	if (k > item.length - 1) {
+		k = 0;
+	}
+	item.eq(k).css({ marginLeft: 100 + '%' });
+	item.eq(k).animate({ marginLeft: 0 }, 1000);
+	item.eq(k - 1).animate({ marginLeft: -100 + '%' }, 1000);
+
+})
+
+//TwentyTwenty
+$(window).on('load', function () {
+	$(".comparison__block").twentytwenty({
+		no_overlay: true
+	});
+});
 
